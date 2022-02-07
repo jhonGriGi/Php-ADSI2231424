@@ -8,7 +8,7 @@ function lowerEmail() {
 }
 
 function nameLength() {
-    return strlen("pablo emilio escobar gaviria");
+    return "La cadena tiene ". strlen("pablo emilio escobar gaviria"). " caracteres";
 }
 
 function getLastFour() {
@@ -18,8 +18,8 @@ function getLastFour() {
 function verifyArray($name) {
     $allNames = array('Pedro', 'Teemo', 'Yasuo', 'Kratos');
 
-    $trueAnswer = "El nombre esta en el array";
-    $falseAnswer = "El nombre no esta en el array";
+    $trueAnswer = "<strong>El nombre esta en el array</strong>";
+    $falseAnswer = "<strong>El nombre no esta en el array</strong>";
 
     return in_array($name, $allNames) ? $trueAnswer : $falseAnswer;
 }

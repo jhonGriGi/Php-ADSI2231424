@@ -1,14 +1,22 @@
 <?php
 function getTypes() {
     $a = 5;
-    echo $a, "<br>";
+    echo "<p class='my-1'>El tipo de la variable es: <strong>";
+    var_dump($a);
+    echo "</strong> </p> </br>";
 
+    echo "<p class='my-1'>El tipo de la variable es: <strong>";
     $b = "Hola";
-    echo $b, "<br>";
+    var_dump($b);
+    echo "</strong> </p> </br>";
 
+    echo "<p class='my-1'>El tipo de la variable es: <strong>";
     $c = 5.7;
-    echo $c, "<br>";
+    var_dump($c);
+    echo "</strong> </p> </br>";
 
+    echo "<p class='my-1'>El tipo de la variable es: <strong>";
     $d = true;
-    echo $d, "<br>";   
+    var_dump($d);   
+    echo "</strong> </p> </br>";
 }
