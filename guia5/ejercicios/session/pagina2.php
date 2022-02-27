@@ -1,12 +1,20 @@
 <?php 
-    $user_name = isset($_POST['UserName']) ? $_POST['UserName'] : "";
     $user_email = isset($_POST['UserEmail']) ? $_POST['UserEmail'] : "";
 
-    if (isset($_POST['UserName'])) 
-        setcookie('user_name', $user_name, time()+60*60*24*365,"/");
+    session_start();
     
-    if (isset($_POST['UserEmail']))
-        setcookie("user_email", $user_email, time()+60*60*24*365,"/");
+    if(!isset($_SESSION['sesion'])) {
+        $_SESSION['sesion'] = array(
+            'user_name' => 'Kratos',
+            'user_email' => 'ghostofsparta@gmail.com'
+        );
+    }
+
+    if ($user_email == $_SESSION['sesion']['user_email']) {
+        header('Location: pagina1.php?accepted=1');
+    } else {
+        header('Location: pagina1.php?error=1');
+    }
 ?>
 
 
@@ -29,8 +37,8 @@
 
 <body>
     <main class="container-fluid">
-        <h1>Se creó la cookie.</h1>
-        <a href="pagina1.php">Ir a la otra página</a>
+        <h1>Se ha verificado la sesion.</h1>
+        <a href="pagina1.php" class='link-primary'>Ir a la otra página</a>
     </main>
 
     <script src="../../../js/bootstrap.min.js"></script>

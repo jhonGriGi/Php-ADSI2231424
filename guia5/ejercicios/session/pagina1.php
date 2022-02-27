@@ -1,17 +1,20 @@
 <?php
     $user_name = isset($_COOKIE['user_name']) ? $_COOKIE['user_name'] : "";
     $user_email = isset($_COOKIE['user_email']) ? $_COOKIE['user_email'] : "";
+    $acceptedCode = isset($_GET["accepted"]) ? $_GET["accepted"] : ""; 
+    $errorCode = isset($_GET["error"]) ? $_GET["error"] : "";
 
-    function printResult($user_name, $user_email) {
-        if ($user_name != "" || $user_email != "") {
+    function printResult($user_email) {
+        if ($user_email != "") {
             echo "
                 <div class='row text-center'>
-                    <h1>Nombre:  $user_name </h1>
                     <h1>Email: $user_email </h1>
                 </div>
             ";
         }
     }
+
+    
 ?>
 
 
@@ -42,10 +45,6 @@
                     <div class="col-6 offset-3">
                     <form action="pagina2.php" method="POST">
                         <div class="form-group mt-3">
-                            <label for="exampleUserName">User Name</label>
-                            <input type="text" class="form-control" id="exampleUserName" name="UserName" placeholder="Enter your username">
-                        </div>
-                        <div class="form-group mt-3">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" name="UserEmail" placeholder="Enter your email">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -54,9 +53,21 @@
                     </form>
                     </div>
                 </div>
-                <?php 
-                    printResult($user_name, $user_email);
-                ?>
+                <div class="row text-center">
+                    <?php 
+                        if ($acceptedCode == 1) {
+                            echo "
+                                <a href='pagina3.php' class='link-primary'>Iniciar sesion</a>
+                            ";
+                        }
+                        if ($errorCode == 1) {
+                            echo "
+                                <h1 class='text-danger'>Error, usuario no registrado</h1>
+                                <p class='text-danger'>No puede ingresar al sitio web<p>
+                            ";
+                        }
+                    ?>
+                </div>
             </div>
             
         </div>

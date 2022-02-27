@@ -1,6 +1,19 @@
 <?php 
     $user_name = isset($_POST['UserName']) ? $_POST['UserName'] : "";
-    $user_email = isset($_POST['UserEmail']) ? $_POST['UserEmail'] : "";
+
+    if (isset($_POST['radio'])) {
+        if ($_POST['radio'] == 'noticiaPolitica') {
+            setcookie('user_radio', 'Noticia Politica', time()+(60*60*24*365),"/");
+
+        } else if ($_POST['radio'] == 'noticiaEconomica') {
+            setcookie('user_radio', 'Noticia Economica', time()+(60*60*24*365),"/");
+
+        } else if ($_POST['radio'] == 'noticiaDeportiva') {
+            setcookie('user_radio', 'Noticia Deportiva', time()+(60*60*24*365),"/");
+        }
+    } else {
+        $userAnswer = "<p class='text-danger'>Seleccione una opcion</p>";
+    }
 
     if (isset($_POST['UserName'])) 
         setcookie('user_name', $user_name, time()+60*60*24*365,"/");
