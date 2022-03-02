@@ -3,7 +3,7 @@ class Empleado {
     private $nombre;
     private $sueldo;
     private $email;
-    private $fecha_nacimiento;
+    private $fechaNacimiento;
     private $peso;
     private $altura;
 
@@ -27,12 +27,30 @@ class Empleado {
         $pagaImpuesto = "debe pagar impuestos";
         $noPagaImpuesto = "no debe pagar impuestos";
         $msgPersona = "La persona $this->nombre ";
-        $sueldoPersona = $this->sueldo;
 
-        return calcularImpuesto($sueldoPersona) ? $msgPersona.$pagaImpuesto : $msg_persona.$noPagaImpuesto;
+        return $msgPersona. ($this->calcularImpuesto() ? $pagaImpuesto : $noPagaImpuesto);
     }
 
-    private function calcularImpuesto($sueldo) {
-        return $sueldo > 2000000 ? true : false;
+    public function puedeVotar() {
+        $msgPersona = "La persona $this->nombre ";
+        $puedeVotar = "puede votar";
+        $edadPersona = $this->calcularEdad();
+        $noPuedeVotar = "no puede votar, porque su edad es: ";
+
+        return $msgPersona. ($edadPersona > 18 ? $puedeVotar : $noPuedeVotar.$edadPersona);
+        
+    }
+
+    private function calcularImpuesto() {
+        return $this->sueldo > 2000000;
+    }
+
+    private function calcularEdad() {
+        $fechaActual = new DateTime();
+        $fechaPersona = new DateTime($this->fechaNacimiento);
+        $fechaPersona->format('Y-m-d');
+        $diferencia = $fechaActual->diff($fechaPersona);
+
+        return $diferencia->format("%y");
     }
 }
