@@ -26,6 +26,14 @@ require_once "./functions/sesion.php";
                     <a href="compras.php" class="ms-auto d-block">Mis Compras</a>
                     <a href="cerrar_sesion.php" class="ms-auto d-block">Cerrar Sesion</a>
                     Este es el perfil de <?php echo $_SESSION['name']; ?>
+                    <div class="p-3 rounded mt-4 border">
+                        <form action="functions/cambiar-nombre.php" method="POST">
+                            <input type="text" name="userNewName" placeholder="Actualizar nombre de usuario" class="form-control">
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-primary " value="Enviar">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -2,6 +2,8 @@
 
 require_once "./functions/sesion.php";
 
+$errorCode = isset($_GET['error']) ? $_GET['error'] : null;
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +27,26 @@ require_once "./functions/sesion.php";
                     <a href="main.php" class="me-auto d-block">Inicio</a>
                     <a href="perfil.php" class="ms-auto d-block">Perfil</a>
                     <a href="cerrar_sesion.php" class="ms-auto d-block">Cerrar Sesion</a>
-                    La cantidad de compras de <?php echo $_SESSION['name']; ?> es:
+                    La cantidad de compras de <?php echo $_SESSION['name']; ?> es <?php echo isset($_COOKIE['compras']) ? $_COOKIE['compras'] : 0; ?>
+                    <div class="p-3 rounded mt-4 border">
+                        <form action="functions/function-compras.php" method="POST">
+                            <input type="text" name="userBuys" placeholder="Ingresa la cantidad de compras" class="form-control">
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-primary " value="Enviar">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <?php if (isset($errorCode)) { ?>
+                        <div class="p-2 rounded mt-4 border">
+                            <p class="text-danger">
+                                <?php
+                                if ($errorCode == 1) {
+                                    echo "Error al actualizar las compras, intentalo mas tarde";
+                                }
+                                ?>
+                            </p>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
