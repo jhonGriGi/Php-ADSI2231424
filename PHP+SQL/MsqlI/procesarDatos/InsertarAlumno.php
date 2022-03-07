@@ -44,6 +44,7 @@ mysqli_close($conexion);
             </p>
         </div>
         <script src="../js/bootstrap.min.js"></script>
+<?php require_once '../templates/link_home.php'; ?>
     </body>
 
     </html>

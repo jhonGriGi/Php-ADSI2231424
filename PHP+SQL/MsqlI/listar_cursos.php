@@ -19,7 +19,7 @@
         // Se llama al método connect, el cual permitirá abrir una conexión a una base de 
         // datos MySQL
         $conexion = $connObj->connect();
-        $SQL = "SELECT codigo, nombrecurso FROM curso";
+        $SQL = "SELECT codigo, nombrecurso FROM cursos";
         //Actividad 02.
         //Crear en la base de datos "universidad" otra tabla llamada "cursos". La estructura de esta 
         // segunda tabla debe ser:
@@ -41,13 +41,7 @@
         // Se cierra la conexión
         mysqli_close($conexion);
         ?>
-        <a href="./form_adicionar_curso.php">agregar nuevo curso</a>
-        <br>
-        <a href="./index.php">Listar los alumnos</a>
-        <br>
-        <a href="./listar_alumno.php"></a>
-        <br>
-        <a href="./buscar_alumno.php"></a>
+<?php require_once './templates/links.php'; ?>
     </div>
     <script src="../js/bootstrap.min.js"></script>
 </body>

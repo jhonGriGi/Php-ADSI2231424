@@ -7,7 +7,7 @@ class Conexion
     {
         $this->host = "localhost:3306";
         $this->user = "root";
-        $this->pass = "";
+        $this->pass = "06031103";
         $this->database = "universidad_php";
     }
 

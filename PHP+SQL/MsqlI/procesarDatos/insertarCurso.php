@@ -9,7 +9,7 @@ $conexion = $connObj->connect();
 // Se reciben los datos del formulario
 $nombreCurso = isset($_POST['nombreCurso']) ? $_POST['nombreCurso'] : null;
 // Se arma la sentencia SQL
-$SQL = "INSERT INTO curso (nombrecurso) VALUES ('$nombreCurso')";
+$SQL = "INSERT INTO cursos (nombrecurso) VALUES ('$nombreCurso')";
 
 // Se ejecuta el metodo que permite realizar una consulta a la BD. Se le envia como parametro la conexion y la consulta
 mysqli_query($conexion, $SQL) or die("Problemas en el INSERT" . mysqli_error($conexion));
@@ -39,6 +39,7 @@ mysqli_close($conexion);
             </p>
         </div>
         <script src="../js/bootstrap.min.js"></script>
+<?php require_once '../templates/link_home.php'; ?>
     </body>
 
     </html>

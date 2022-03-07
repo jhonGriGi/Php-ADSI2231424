@@ -54,13 +54,7 @@
         // Se cierra la conexión
         mysqli_close($conexion);
         ?>
-        <a href="./form_adicionar_curso.php">agregar nuevo curso</a>
-        <br>
-        <a href="./index.php">Listar los alumnos</a>
-        <br>
-        <a href="./listar_cursos.php">Listar los cursos</a>
-        <br>
-        <a href="./buscar_alumno.php"></a>
+<?php require_once './templates/links.php'; ?>
     </div>
     <script src="../js/bootstrap.min.js"></script>
 </body>

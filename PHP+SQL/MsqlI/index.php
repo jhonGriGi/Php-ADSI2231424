@@ -12,7 +12,7 @@
 <body>
     <div class="col-6 offset-3 mt-5 rounded bg-light shadow-lg mx-auto p-5">
         <h1>Ingrese los datos</h1>
-        <form action="procesardatos/InsertarAlumno.php" method="POST">
+        <form action="./procesarDatos/InsertarAlumno.php" method="POST">
             <div class="form-group my-3">
                 <label for="userName">Nombre completo</label>
                 <input type="text" class="form-control" id="userName" name="userName" placeholder="Ingrese su nombre">
@@ -31,17 +31,10 @@
                     <option value="3">JSP</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary d-block mx-auto">Submit</button>
+            <button type="submit" class="btn btn-primary my-3 d-block mx-auto">Submit</button>
         </form>
-        <a href="./form_adicionar_curso.php">agregar nuevo curso</a>
-        <br>
-        <a href="./listar_alumno.php">Listar los alumnos</a>
-        <br>
-        <a href="./listar_cursos.php">Listar los cursos</a>
-        <br>
-        <a href="./buscar_alumno.php"></a>
-
-    </div>
+<?php require_once './templates/links.php'; ?>
+     </div>
     <script src="../js/bootstrap.min.js"></script>
 </body>
 
