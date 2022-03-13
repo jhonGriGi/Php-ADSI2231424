@@ -9,7 +9,7 @@
   <a href="../../Views/banco/pagar_factura.php" class="d-block border p-2 m-2 text-center link">
     Pagar una factura
   </a>
-  <a href="#" class="d-block border p-2 m-2 text-center link">
+  <a href="../../Views/banco/transferir_dinero.php" class="d-block border p-2 m-2 text-center link">
     Transferir Dinero
   </a>
 </div>
