@@ -6,9 +6,9 @@ require_once '../../Model/banco/info_dinero.php';
 <head>
   <meta charset="UTF-8">
   <title>Ingresar dinero</title>
-  <link rel="stylesheet" href="../../../../../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../../../css/fontawesome.min.css">
-  <link rel="stylesheet" href="../../../../../css/all.min.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.min.css">
+  <link rel="stylesheet" href="../../css/all.min.css">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -28,9 +28,8 @@ require_once '../../Model/banco/info_dinero.php';
     <?php
       require_once './templates/funciones_cuenta.php';
       require_once './templates/volver_perfil.php';
-      require_once './templates/return_home.php';
     ?>
   </div>
-<script src="../../../../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -6,9 +6,9 @@ $errorCode = isset($_GET['error']) ? $_GET['error'] : null;
 <head>
   <meta charset="UTF-8">
   <title>Iniciar sesion en el banco</title>
-  <link rel="stylesheet" href="../../../../../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../../../css/fontawesome.min.css">
-  <link rel="stylesheet" href="../../../../../css/all.min.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.min.css">
+  <link rel="stylesheet" href="../../css/all.min.css">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -32,6 +32,6 @@ $errorCode = isset($_GET['error']) ? $_GET['error'] : null;
     <a href="./view_registrar_banco.php" class="d-block border p-2 m-2 text-center link">Registrarse en Banco BIDG</a>
     <?php require_once './templates/return_home.php'; ?>
   </div>
-<script src="../../../../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 </body>
 </html>

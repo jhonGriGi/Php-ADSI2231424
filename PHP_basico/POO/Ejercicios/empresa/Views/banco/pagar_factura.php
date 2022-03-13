@@ -1,15 +1,15 @@
 <?php
 require_once '../../Model/banco/info_dinero.php';
-require_once '../../Model/banco/modelo_pagar_factura.php';
+/* require_once '../../Model/banco/modelo_pagar_factura.php'; */
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Pagar facturas</title>
-  <link rel="stylesheet" href="../../../../../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../../../css/fontawesome.min.css">
-  <link rel="stylesheet" href="../../../../../css/all.min.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.min.css">
+  <link rel="stylesheet" href="../../css/all.min.css">
   <link rel="stylesheet" href="../../Views/css/styles.css">
 </head>
 <body>
@@ -34,24 +34,12 @@ require_once '../../Model/banco/modelo_pagar_factura.php';
       </div>
       <button type="submit" class="btn btn-primary d-block mx-auto">Pagar factura</button>
     </form>
-    <?php if ($resultado_facturas) {?>
-      <table>
-        <tr>
-          <th>Numero</th>
-          <th>Nombre</th>
-          <th>Coste</th>
-        </tr>
-        <?php
-          $controller_cuenta->mostrarFactura($sesion_actual);
-        ?>
-      </table>
-    <?php } ?>
+
     <?php
       require_once '../../Views/banco/templates/funciones_cuenta.php';
       require_once '../../Views/banco/templates/volver_perfil.php';
-      require_once '../../Views/banco/templates/return_home.php';
     ?>
   </div>
-<script src="../../../../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Formulario</title>
-  <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../../css/fontawesome.min.css">
-  <link rel="stylesheet" href="../../../../css/all.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/fontawesome.min.css">
+  <link rel="stylesheet" href="../css/all.min.css">
 </head>
 <body>
   <div class="col-6 offset-3 mt-5 rounded bg-light shadow-lg mx-auto p-5">
@@ -40,6 +40,6 @@
     </form>
     <?php require_once './return_home.php'; ?>
   </div>
-<script src="../../../../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

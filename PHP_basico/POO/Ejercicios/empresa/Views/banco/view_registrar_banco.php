@@ -6,9 +6,9 @@ $errorCode = isset($_GET['error']) ? $_GET['error'] : null;
 <head>
   <meta charset="UTF-8">
   <title>Registrarse en el banco</title>
-  <link rel="stylesheet" href="../../../../../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../../../css/fontawesome.min.css">
-  <link rel="stylesheet" href="../../../../../css/all.min.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.min.css">
+  <link rel="stylesheet" href="../../css/all.min.css">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -35,12 +35,12 @@ $errorCode = isset($_GET['error']) ? $_GET['error'] : null;
       </div>
       <button type="submit" class="btn btn-primary d-block mx-auto">Submit</button>
     <?php if ($errorCode == 1) {?>
-      <p class="text-danger my-2">Inicie sesion malparido, no sea colado hp</p>
+      <p class="text-danger my-2">Error, Usuario o Numero de cuenta incorrectos</p>
     <?php } ?>
     </form>
     <a href="./view_ingresar_banco.php" class="d-block border p-2 m-2 text-center link">Iniciar Sesion</a>
     <?php require_once './templates/return_home.php'; ?>
   </div>
-<script src="../../../../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 </body>
 </html>

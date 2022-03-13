@@ -6,9 +6,9 @@ require_once '../../Model/banco/modelo_perfil.php';
 <head>
   <meta charset="UTF-8">
   <title>Perfil de usuario</title>
-  <link rel="stylesheet" href="../../../../../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../../../css/fontawesome.min.css">
-  <link rel="stylesheet" href="../../../../../css/all.min.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.min.css">
+  <link rel="stylesheet" href="../../css/all.min.css">
   <link rel="stylesheet" href="../../Views/css/styles.css">
 </head>
 <body>
@@ -24,9 +24,8 @@ require_once '../../Model/banco/modelo_perfil.php';
     <?php
       require_once '../../Views/banco/templates/funciones_cuenta.php';
       require_once '../../Views/banco/templates/volver_perfil.php';
-      require_once '../../Views/banco/templates/return_home.php';
     ?>
   </div>
-<script src="../../../../../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 </body>
 </html>

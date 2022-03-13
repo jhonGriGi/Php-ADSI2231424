@@ -24,6 +24,19 @@ class Cuenta {
     return $reg;
   }
 
+  public function verificarSesion($numero_cuenta, $nombre_titular)
+  {
+    $conexion = $this->database->connect();
+
+    $SQL = "SELECT * FROM usuarios WHERE numero_cuenta = $numero_cuenta and nombre_titular = '$nombre_titular'";
+
+    $registros = mysqli_query($conexion, $SQL) or die ('Problemas al verificar con el SELECT' . mysqli_error($conexion));
+
+    mysqli_close($conexion);
+
+    return $registros;
+  }
+
   public function agregarDinero($numero_cuenta, $nuevo_saldo)
   {
     $conexion = $this->database->connect();
@@ -63,23 +76,16 @@ class Cuenta {
     return $reg;
   }
 
-  public function insertarFacturaEnBd
-    (
-      $nombre_factura,
-      $numero_factura,
-      $coste_factura,
-      $sesion_actual
-    )
+  public function insertarFactura($numero_factura, $nombre_factura, $coste_factura, $sesion_actual)
   {
     $conexion = $this->database->connect();
 
     $SQL = "INSERT INTO factura (numero_factura, nombre_factura, coste_factura, numero_cuenta) VALUES ($numero_factura, '$nombre_factura', $coste_factura, $sesion_actual)";
 
-    mysqli_query($conexion, $SQL) or die ('Problemas con el INSERT  ' . mysqli_error($conexion));
+    mysqli_query($conexion, $SQL) or die ('Problemas en el INSERT de factura ' . mysqli_error($conexion));
 
     mysqli_close($conexion);
 
-    return false;
   }
 
   public function pagarFactura
@@ -94,7 +100,6 @@ class Cuenta {
 
     mysqli_close($conexion);
 
-    return true;
   }
 
   public function mostrarFactura($sesion_actual)

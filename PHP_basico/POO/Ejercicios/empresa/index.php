@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Formulario</title>
-  <link rel="stylesheet" href="../../../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../css/fontawesome.min.css">
-  <link rel="stylesheet" href="../../../css/all.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.min.css">
+  <link rel="stylesheet" href="./css/all.min.css">
   <link rel="stylesheet" href="./Views/css/styles.css">
 </head>
 <body>
@@ -18,6 +18,6 @@
       Registar cliente en banco adsi
     </a>
   </header>
-<script src="../../../js/bootstrap.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
