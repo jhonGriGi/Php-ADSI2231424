@@ -6,16 +6,7 @@
   <link rel="stylesheet" href="../../../css/bootstrap.min.css">
   <link rel="stylesheet" href="../../../css/fontawesome.min.css">
   <link rel="stylesheet" href="../../../css/all.min.css">
-  <style>
-    .link {
-text-decoration: none;
-color: #000;
-border-radius: 15px;
-}
-  .link:hover {
-background-color: yellow;
-}
-  </style>
+  <link rel="stylesheet" href="./Views/css/styles.css">
 </head>
 <body>
   <header class="col-6 offset-3 mt-5 rounded bg-light shadow-lg mx-auto p-5 text-center">
@@ -23,7 +14,7 @@ background-color: yellow;
     <a href="./Views/view_registrar_empleado.php" class="d-block border p-2 m-2 text-center link">
       Registrar un empleado
     </a>
-    <a href="./Viws/form_registrar_bancoadsi.php" class="d-block border p-2 m-2 text-center link">
+    <a href="./Views/banco/view_registrar_banco.php" class="d-block border p-2 m-2 text-center link">
       Registar cliente en banco adsi
     </a>
   </header>

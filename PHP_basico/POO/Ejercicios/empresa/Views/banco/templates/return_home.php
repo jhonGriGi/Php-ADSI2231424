@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-  <a href="../index.php"class="d-block border p-2 m-2 text-center link">
+  <a href="../../index.php"class="d-block border p-2 m-2 text-center link">
     Regresar al inicio
   </a>
     <script src="../../../../js/bootstrap.min.js"></script>
