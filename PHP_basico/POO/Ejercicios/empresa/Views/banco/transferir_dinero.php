@@ -2,6 +2,7 @@
 require_once '../../Model/banco/info_dinero.php';
 
 $success_code = isset($_GET['success']) ? $_GET['success'] : null;
+$error_code = isset($_GET['error']) ? $_GET['error'] : null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +31,9 @@ $success_code = isset($_GET['success']) ? $_GET['success'] : null;
       </div>
       <?php if ($success_code == 1) { ?>
         <p class="text-success my-2">Dinero Transferido</p>
+      <?php } ?>
+      <?php if ($error_code == 4) { ?>
+        <p class="text-danger my-2">Cuenta no encontrada</p>
       <?php } ?>
       <button type="submit" class="btn btn-primary d-block mx-auto">Transferir dinero</button>
     </form>

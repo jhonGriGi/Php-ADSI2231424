@@ -11,8 +11,14 @@ $cuenta_destino = isset($_POST['cuenta_destino']) ? $_POST['cuenta_destino'] : n
 $sesion_actual = $_SESSION['sesion_actual'];
 
 $controller_banco = new Cuenta();
-$reg = $controller_banco->agregarDinero($cuenta_destino, $transferir_dinero);
-$resta_dinero = $controller_banco->retirarDinero($sesion_actual, $transferir_dinero);
+$buscar_persona = $controller_banco->verificarTransferencia($cuenta_destino);
 
-header('Location: ../../Views/banco/transferir_dinero.php?success=1');
+if ($persona_correcta = mysqli_fetch_array($buscar_persona)) {
+  $reg = $controller_banco->agregarDinero($cuenta_destino, $transferir_dinero);
+  $resta_dinero = $controller_banco->retirarDinero($sesion_actual, $transferir_dinero);
+  header('Location: ../../Views/banco/transferir_dinero.php?success=1');
+} else {
+  header('Location: ../../Views/banco/transferir_dinero.php?error=4');
+}
+
 ?>

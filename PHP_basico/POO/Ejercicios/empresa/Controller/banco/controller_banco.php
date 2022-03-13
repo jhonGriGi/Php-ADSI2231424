@@ -24,6 +24,19 @@ class Cuenta {
     return $reg;
   }
 
+  public function verificarTransferencia($sesion_actual)
+  {
+    $conexion = $this->database->connect();
+
+    $SQL = "SELECT * FROM usuarios WHERE numero_cuenta = $sesion_actual";
+
+    $registros = mysqli_query($conexion, $SQL) or die ('Problemas con el SELECT, no se encontro el usuario ' . mysqli_error($conexion));
+
+    mysqli_close($conexion);
+
+    return $registros;
+  }
+
   public function verificarSesion($numero_cuenta, $nombre_titular)
   {
     $conexion = $this->database->connect();
