@@ -5,6 +5,8 @@ session_start();
 $nombre_titular = isset($_POST['userName']) ? $_POST['userName'] : null;
 $numero_cuenta = isset($_POST['userNumberAccount']) ? $_POST['userNumberAccount'] : null;
 
+$_SESSION['sesion_actual'] = isset($numero_cuenta) ? $numero_cuenta : null;
+
 $tipo_cuenta = '';
 if ($_POST['userTypeAccount'] == 'cuenta_corriente') {
   $tipo_cuenta = 'Cuenta corriente';
@@ -17,8 +19,6 @@ if ($_POST['userTypeAccount'] == 'cuenta_corriente') {
 } else {
   $tipo_cuenta = null;
 }
-
-$_SESSION['sesion_actual'] = $numero_cuenta;
 
 $database = new Conexion();
 $conexion = $database->connect();

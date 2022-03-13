@@ -1,12 +1,15 @@
+<?php
+require_once '../../Model/banco/modelo_perfil.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Registrarse en el banco</title>
+  <title>Perfil de usuario</title>
   <link rel="stylesheet" href="../../../../../css/bootstrap.min.css">
   <link rel="stylesheet" href="../../../../../css/fontawesome.min.css">
   <link rel="stylesheet" href="../../../../../css/all.min.css">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../../Views/css/styles.css">
 </head>
 <body>
   <div class="col-6 offset-3 mt-5 rounded bg-light shadow-lg mx-auto p-5">
@@ -18,24 +21,10 @@
       <p>Tipo de cuenta: <strong> <?php echo $reg['tipo_cuenta']; ?></strong></p>
       <p>Saldo actual: <strong> $<?php echo $reg['saldo']; ?></strong></p>
     </div>
-    <div class="border rounded mx-auto my-3 p-2">
-      <a href="./agregar_dinero.php" class="d-block border p-2 m-2 text-center link">
-        Agregar Dinero
-      </a>
-      <a href="#" class="d-block border p-2 m-2 text-center link">
-        Retirar Dinero
-      </a>
-      <a href="#" class="d-block border p-2 m-2 text-center link">
-        Pagar una factura
-      </a>
-      <a href="#" class="d-block border p-2 m-2 text-center link">
-        Transferir Dinero
-      </a>
-    </div>
-
     <?php
-      require_once './templates/volver_perfil.php';
-      require_once './templates/return_home.php';
+      require_once '../../Views/banco/templates/funciones_cuenta.php';
+      require_once '../../Views/banco/templates/volver_perfil.php';
+      require_once '../../Views/banco/templates/return_home.php';
     ?>
   </div>
 <script src="../../../../../js/bootstrap.min.js"></script>

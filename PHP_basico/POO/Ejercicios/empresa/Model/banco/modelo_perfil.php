@@ -1,19 +1,27 @@
 <?php
 require_once '../../Controller/banco/Conexion.php';
-
+require_once '../../Controller/banco/controller_banco.php';
 session_start();
-require_once '../../Model/banco/components/security.php';
+
+$nombre_titular = isset($_POST['userName']) ? $_POST['userName'] : '';
+$numero_cuenta = isset($_POST['userNumberAccount']) ? $_POST['userNumberAccount'] : null;
 
 $database = new Conexion();
 $conexion = $database->connect();
+$controller_cuenta = new Cuenta();
 
-$sesion_actual = $_SESSION['sesion_actual'];
-$SQL = "SELECT * FROM usuarios where numero_cuenta=$sesion_actual";
+if (empty($_SESSION['sesion_actual'])) {
+  $_SESSION['sesion_actual'] = $numero_cuenta;
+}
 
-$registros = mysqli_query($conexion, $SQL) or die ('Problemas con la consulta' . mysqli_error($conexion));
+$sesion_actual = isset($_SESSION['sesion_actual']) ?$_SESSION['sesion_actual'] : $numero_cuenta;
 
-$reg = mysqli_fetch_array($registros);
+require_once '../../Model/banco/components/security.php';
+$reg =  $controller_cuenta->getUser($sesion_actual);
 
-mysqli_close($conexion);
+if (empty($_SESSION['sesion_actual'])) {
+  header('Location: ../../Views/banco/view_ingresar_banco.php?error=2');
+}
 
+require_once '../../Views/banco/perfil.php';
 ?>
