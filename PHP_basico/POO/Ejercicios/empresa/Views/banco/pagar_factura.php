@@ -1,6 +1,5 @@
 <?php
 require_once '../../Model/banco/info_dinero.php';
-/* require_once '../../Model/banco/modelo_pagar_factura.php'; */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +20,7 @@ require_once '../../Model/banco/info_dinero.php';
     </div>
     <form action="../../Model/banco/modelo_pagar_factura.php" method="POST">
       <div class="form-group my-3">
-        <label for="nombre_factura">Coste de la factura</label>
+        <label for="nombre_factura">Nombre de la factura</label>
         <input type="text" class="form-control" id="nombre_factura" name="nombre_factura" placeholder="Coloque el nombre de la factura">
       </div>
       <div class="form-group my-3">
@@ -34,7 +33,6 @@ require_once '../../Model/banco/info_dinero.php';
       </div>
       <button type="submit" class="btn btn-primary d-block mx-auto">Pagar factura</button>
     </form>
-
     <?php
       require_once '../../Views/banco/templates/funciones_cuenta.php';
       require_once '../../Views/banco/templates/volver_perfil.php';

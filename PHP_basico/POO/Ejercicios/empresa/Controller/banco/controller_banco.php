@@ -101,20 +101,6 @@ class Cuenta {
 
   }
 
-  public function pagarFactura
-    (
-      $coste_factura,
-      $sesion_actual
-    )
-  {
-    $conexion = $this->database->connect();
-
-    $this->retirarDinero($sesion_actual, $coste_factura);
-
-    mysqli_close($conexion);
-
-  }
-
   public function mostrarFactura($sesion_actual)
   {
     $conexion = $this->database->connect();
@@ -123,24 +109,11 @@ class Cuenta {
 
     $registros = mysqli_query($conexion, $SQL) or die ('Problemas en el SELECT ' . mysqli_error($conexion));
 
-    $reg = mysqli_fetch_array($registros);
+    mysqli_close($conexion);
 
-    while ($reg = mysqli_fetch_array($registros)) {
-      $nombre_factura = $reg['nombre_factura'];
-      $numero_factura = $reg['numero_factura'];
-      $coste_factura = $reg['coste_factura'];
-      echo "
-  <tr>
-    <td>$nombre_factura</td>
-    <td>$numero_factura</td>
-    <td>$coste_factura</td>
-  </tr>
-";
-
-      mysqli_close($conexion);
-    }
-
+    return $registros;
   }
+
 }
 
 ?>

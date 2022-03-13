@@ -6,7 +6,6 @@ session_start();
 
 $database = new Conexion();
 
-// TODO reiniciar toda la logica de factura
 $nombre_facturas = isset($_POST['nombre_factura']) ? $_POST['nombre_factura'] : null;
 $numero_facturas = isset($_POST['numero_factura']) ? $_POST['numero_factura'] : null;
 $coste_facturas = isset($_POST['coste_factura']) ? $_POST['coste_factura'] : null;
@@ -21,11 +20,9 @@ $SQL = "INSERT INTO factura VALUES ($numero_facturas, '$nombre_facturas', $coste
 
 mysqli_query($conexion, $SQL) or die ('Problemas en el INSERT de factura ' . mysqli_error($conexion));
 
-$resultado_factura = $controller_banco->pagarFactura($sesion_actual,$coste_facturas);
+$resultado_factura = $controller_banco->retirarDinero($sesion_actual, $coste_facturas);
 
 mysqli_close($conexion);
-
-/* $insertar_factura = $controller_banco->insertarFactura($numero_factura, $nombre_factura, $coste_factura, $sesion_actual); */
 
 session_abort();
 require_once '../../Views/banco/pagar_factura.php';
