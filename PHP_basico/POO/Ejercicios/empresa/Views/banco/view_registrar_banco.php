@@ -35,7 +35,7 @@ $errorCode = isset($_GET['error']) ? $_GET['error'] : null;
       </div>
       <button type="submit" class="btn btn-primary d-block mx-auto">Submit</button>
     <?php if ($errorCode == 1) {?>
-      <p class="text-danger my-2">Error, Usuario o Numero de cuenta incorrectos</p>
+      <p class="text-danger my-2">Error, Usuario y/o Numero de cuenta incorrectos</p>
     <?php } ?>
     </form>
     <a href="./view_ingresar_banco.php" class="d-block border p-2 m-2 text-center link">Iniciar Sesion</a>

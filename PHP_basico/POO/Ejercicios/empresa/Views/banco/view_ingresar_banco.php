@@ -26,7 +26,7 @@ $errorCode = isset($_GET['error']) ? $_GET['error'] : null;
       </div>
       <button type="submit" class="btn btn-primary d-block mx-auto">Submit</button>
     <?php if ($errorCode == 2) { ?>
-      <p class="text-danger">Error, Usuario o Numero de cuenta incorrectos</p>
+      <p class="text-danger">Error, Usuario y/o Numero de cuenta incorrectos</p>
     <?php } ?>
     </form>
     <a href="./view_registrar_banco.php" class="d-block border p-2 m-2 text-center link">Registrarse en Banco BIDG</a>
