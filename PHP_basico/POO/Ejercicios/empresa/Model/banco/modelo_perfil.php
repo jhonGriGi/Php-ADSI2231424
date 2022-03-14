@@ -12,12 +12,13 @@ $controller_cuenta = new Cuenta();
 
 if (empty($_SESSION['sesion_actual'])) {
   $reg = $controller_cuenta->verificarSesion($numero_cuenta, $nombre_titular);
+  $resultado = mysqli_fetch_array($reg);
 
-  if ($resultado = mysqli_fetch_array($reg)) {
-    $_SESSION['sesion_actual'] = $numero_cuenta;
-  } else {
+  if (!empty($resultado)) {
     header('Location: ../../Views/banco/view_ingresar_banco.php?error=2');
   }
+    
+  $_SESSION['sesion_actual'] = $numero_cuenta;
 }
 
 $sesion_actual = $_SESSION['sesion_actual'];
