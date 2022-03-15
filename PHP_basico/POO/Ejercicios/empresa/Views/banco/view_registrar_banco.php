@@ -18,11 +18,11 @@ $errorCode = isset($_GET['error']) ? $_GET['error'] : null;
     <form action="../../Model/banco/modelo_registrar_banco.php" method="POST">
       <div class="form-group my-3">
         <label for="userName">Nombre completo del titular</label>
-        <input type="text" class="form-control" id="userName" name="userName" placeholder="Ingrese su nombre">
+        <input type="text" required class="form-control" id="userName" name="userName" placeholder="Ingrese su nombre">
       </div>
       <div class="form-group my-3">
         <label for="userNumberAccount">Numero de cuenta</label>
-        <input type="number" class="form-control" id="userNumberAccount" name="userNumberAccount" placeholder="Ingrese el numero de cuenta">
+        <input type="number" required class="form-control" id="userNumberAccount" name="userNumberAccount" placeholder="Ingrese el numero de cuenta">
       </div>
       <div class="form-group my-3">
         <select class="form-select" name="userTypeAccount" aria-label="Default select example">
