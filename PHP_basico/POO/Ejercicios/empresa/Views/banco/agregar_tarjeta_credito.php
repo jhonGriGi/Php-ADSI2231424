@@ -2,6 +2,7 @@
 require_once '../../Model/banco/info_dinero.php';
 
 $success_code = isset($_GET['success']) ? $_GET['success'] : null;
+$error_code = isset($_GET['error']) ? $_GET['error'] : null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +32,9 @@ $success_code = isset($_GET['success']) ? $_GET['success'] : null;
       <button type="submit" class="btn btn-primary d-block mx-auto">Agregar dinero</button>
     <?php if ($success_code == 1) { ?>
       <p class="text-success">La tarjeta fue creada con exito</p>
+    <?php } ?>
+    <?php if ($error_code == 1) { ?>
+      <p class="text-danger">Ya existe una tarjeta de credito asociada!!</p>
     <?php } ?>
     </form>
     <?php
