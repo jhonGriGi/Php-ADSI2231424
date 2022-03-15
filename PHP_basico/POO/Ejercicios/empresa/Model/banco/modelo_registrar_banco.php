@@ -23,7 +23,7 @@ if ($_POST['userTypeAccount'] == 'cuenta_corriente') {
 $database = new Conexion();
 $conexion = $database->connect();
 
-$SQL = "INSERT INTO usuarios (numero_cuenta, nombre_titular, tipo_cuenta, saldo) VALUES ($numero_cuenta, '$nombre_titular', '$tipo_cuenta', 0)";
+$SQL = "INSERT INTO usuarios (id_cuenta, nombre_titular, tipo_cuenta) VALUES ($numero_cuenta, '$nombre_titular', '$tipo_cuenta')";
 
 mysqli_query($conexion, $SQL) or die ('Problemas en la consulta'. mysqli_error($conexion));
 

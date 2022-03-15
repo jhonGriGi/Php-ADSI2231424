@@ -17,9 +17,10 @@ require_once '../../Model/banco/modelo_perfil.php';
     <h4 class="text-center"><i>¿Que deseas hacer <?php echo $reg['nombre_titular']; ?>?</i></h4>
     <div class="rounded mx-auto my-3">
       <h3 class="text-center">Informacion de cuenta</h3>
-      <p>Numero de cuenta: <strong> <?php echo $reg['numero_cuenta']; ?> </strong></p>
+      <p>Numero de cuenta: <strong> <?php echo $reg['id_cuenta']; ?> </strong></p>
       <p>Tipo de cuenta: <strong> <?php echo $reg['tipo_cuenta']; ?></strong></p>
-      <p>Saldo actual: <strong> $<?php echo $reg['saldo']; ?></strong></p>
+      <p>Numero de tarjeta de credito: <strong> <?php echo $id_tarjeta; ?></strong></p>
+      <p>Saldo actual: <strong> $<?php echo $saldo; ?></strong></p>
     </div>
     <?php
       require_once '../../Views/banco/templates/funciones_cuenta.php';

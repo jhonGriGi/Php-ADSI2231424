@@ -14,15 +14,10 @@ $sesion_actual = $_SESSION['sesion_actual'];
 
 $controller_banco = new Cuenta();
 
-$conexion = $database->connect();
-
-$SQL = "INSERT INTO factura VALUES ($numero_facturas, '$nombre_facturas', $coste_facturas, $sesion_actual)";
-
-mysqli_query($conexion, $SQL) or die ('Problemas en el INSERT de factura ' . mysqli_error($conexion));
+$controller_banco->insertarFactura($numero_facturas, $nombre_facturas, $coste_facturas, $sesion_actual);
 
 $resultado_factura = $controller_banco->retirarDinero($sesion_actual, $coste_facturas);
 
-mysqli_close($conexion);
 
 session_abort();
 require_once '../../Views/banco/pagar_factura.php';

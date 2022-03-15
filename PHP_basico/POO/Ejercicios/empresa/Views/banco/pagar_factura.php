@@ -16,7 +16,7 @@ require_once '../../Model/banco/info_dinero.php';
     <h1 class="text-center">Pagar facturas</h1>
     <div class="rounded mx-auto my-3">
     <h3 class="text-center">Dinero actual de <?php echo $reg['nombre_titular']; ?></h3>
-      <p>Saldo actual: <strong> $<?php echo $reg['saldo']; ?></strong></p>
+      <p>Saldo actual: <strong> $<?php echo $saldo; ?></strong></p>
     </div>
     <form action="../../Model/banco/modelo_pagar_factura.php" method="POST">
       <div class="form-group my-3">

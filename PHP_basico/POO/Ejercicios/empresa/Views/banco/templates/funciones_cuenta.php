@@ -1,5 +1,6 @@
 <div class="border rounded mx-auto my-3 p-2">
   <a href="../../Views/banco/perfil.php" class="d-block border p-2 m-2 text-center link">Perfil</a>
+  <a href="../../Views/banco/agregar_tarjeta_credito.php" class="d-block border p-2 m-2 text-center link">Agregar tarjeta credito</a>
   <a href="../../Views/banco/agregar_dinero.php" class="d-block border p-2 m-2 text-center link">
     Agregar Dinero
   </a>
