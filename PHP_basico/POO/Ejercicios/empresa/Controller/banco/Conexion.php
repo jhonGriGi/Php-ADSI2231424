@@ -1,4 +1,8 @@
 <?php
+require('../../vendor/autoload.php');
+
+$dotenv = Dotenv\Dotenv::createImmutable('../../');
+$dotenv->load();
 
 class Conexion {
   private $localhost;
@@ -10,7 +14,7 @@ class Conexion {
   {
     $this->localhost = 'localhost';
     $this->username = 'root';
-    $this->pass = '06031103';
+    $this->pass = $_ENV['DDBB_PASSWORD'];
     $this->database = 'banco_BIDG';
   }
 
