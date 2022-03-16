@@ -24,10 +24,19 @@ $error_code = isset($_GET['error']) ? $_GET['error'] : null;
     <form action="../../Model/banco/modelo_transferir_dinero.php" method="POST">
       <div class="form-group my-3">
         <label for="cuenta_destino">Numero cuenta</label>
-        <input type="number" class="form-control" id="cuenta_destino" name="cuenta_destino" placeholder="Coloque el numero de cuenta del destinatario">
-      </div><div class="form-group my-3">
+        <input type="number" required class="form-control" id="cuenta_destino" name="cuenta_destino" placeholder="Coloque el numero de cuenta del destinatario">
+      </div>
+      <div class="form-group my-3">
+        <label for="id_tarjeta_propia">Tarjeta de credito del propietario</label>
+        <input type="number" required class="form-control" id="id_tarjeta_propia" name="id_tarjeta_propia" placeholder="Coloque el numero de tarjeta del propietario">
+      </div>
+      <div class="form-group my-3">
+        <label for="id_tarjeta">Tarjeta de credito del destinataio</label>
+        <input type="number" required class="form-control" id="id_tarjeta" name="id_tarjeta" placeholder="Coloque el numero de tarjeta del destinatario">
+      </div>
+      <div class="form-group my-3">
         <label for="transferir_dinero">Monto a transferir</label>
-        <input type="number" class="form-control" id="transferir_dinero" name="transferir_dinero" placeholder="Coloque el saldo a transferir">
+        <input type="number" required class="form-control" id="transferir_dinero" name="transferir_dinero" placeholder="Coloque el saldo a transferir">
       </div>
       <?php if ($success_code == 1) { ?>
         <p class="text-success my-2">Dinero Transferido</p>

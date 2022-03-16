@@ -63,17 +63,17 @@ class Cuenta {
     return $registros;
   }
 
-  public function agregarDinero($id_cuenta, $nuevo_saldo)
+  public function agregarDinero($id_tarjeta, $nuevo_saldo)
   {
     $conexion = $this->database->connect();
-    $SQL = "SELECT saldo FROM tarjeta_credito WHERE id_cuenta = $id_cuenta";
+    $SQL = "SELECT saldo FROM tarjeta_credito WHERE id_tarjeta = $id_tarjeta";
 
     $registros = mysqli_query($conexion, $SQL) or die ('Problemas en el SELECT ' . mysqli_error($conexion));
 
     $reg = mysqli_fetch_array($registros);
 
     $saldo_actualizado = $reg['saldo'] + $nuevo_saldo;
-    $actualizar_saldo = "UPDATE tarjeta_credito SET saldo = $saldo_actualizado WHERE id_cuenta = $id_cuenta";
+    $actualizar_saldo = "UPDATE tarjeta_credito SET saldo = $saldo_actualizado WHERE id_tarjeta = $id_tarjeta";
 
     mysqli_query($conexion, $actualizar_saldo) or die ('Problemas con el UPDATE ' . mysqli_error($conexion));
 
@@ -82,10 +82,10 @@ class Cuenta {
     return $reg;
   }
 
-  public function retirarDinero($id_cuenta, $resta_saldo)
+  public function retirarDinero($id_tarjeta, $resta_saldo)
   {
     $conexion = $this->database->connect();
-    $SQL = "SELECT saldo FROM tarjeta_credito WHERE id_cuenta = $id_cuenta";
+    $SQL = "SELECT saldo FROM tarjeta_credito WHERE id_tarjeta = $id_tarjeta";
 
     $registros = mysqli_query($conexion, $SQL) or die ('Problemas en el SELECT ' . mysqli_error($conexion));
 
@@ -93,7 +93,7 @@ class Cuenta {
 
     $saldo_actualizado = $reg['saldo'] - $resta_saldo;
 
-    $actualizar_saldo = "UPDATE tarjeta_credito SET saldo = $saldo_actualizado WHERE id_cuenta = $id_cuenta";
+    $actualizar_saldo = "UPDATE tarjeta_credito SET saldo = $saldo_actualizado WHERE id_tarjeta = $id_tarjeta";
 
     mysqli_query($conexion, $actualizar_saldo) or die ('Problemas con el UPDATE ' . mysqli_error($conexion));
 

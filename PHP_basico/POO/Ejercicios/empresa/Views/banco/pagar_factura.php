@@ -21,15 +21,19 @@ require_once '../../Model/banco/info_dinero.php';
     <form action="../../Model/banco/modelo_pagar_factura.php" method="POST">
       <div class="form-group my-3">
         <label for="nombre_factura">Nombre de la factura</label>
-        <input type="text" class="form-control" id="nombre_factura" name="nombre_factura" placeholder="Coloque el nombre de la factura">
+        <input type="text" required class="form-control" id="nombre_factura" name="nombre_factura" placeholder="Coloque el nombre de la factura">
       </div>
       <div class="form-group my-3">
         <label for="numero_factura">Numero factura</label>
-        <input type="number" class="form-control" id="numero_factura" name="numero_factura" placeholder="Coloque el numero de la factura">
+        <input type="number" required class="form-control" id="numero_factura" name="numero_factura" placeholder="Coloque el numero de la factura">
       </div>
       <div class="form-group my-3">
         <label for="coste_factura">Coste de la factura</label>
-        <input type="number" class="form-control" id="coste_factura" name="coste_factura" placeholder="Coloque el coste de la factura">
+        <input type="number" required class="form-control" id="coste_factura" name="coste_factura" placeholder="Coloque el coste de la factura">
+      </div>
+      <div class="form-group my-3">
+        <label for="id_tarjeta">Tarjeta de credito</label>
+        <input type="number" required class="form-control" id="id_tarjeta" name="id_tarjeta" placeholder="Numero de tarjeta">
       </div>
       <button type="submit" class="btn btn-primary d-block mx-auto">Pagar factura</button>
     </form>

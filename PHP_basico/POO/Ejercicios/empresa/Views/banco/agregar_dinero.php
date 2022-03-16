@@ -20,8 +20,12 @@ require_once '../../Model/banco/info_dinero.php';
     </div>
     <form action="../../Model/banco/modelo_agregar_dinero.php" method="POST">
       <div class="form-group my-3">
+        <label for="id_tarjeta">Tarjeta de credito</label>
+        <input type="number" required class="form-control" id="id_tarjeta" name="id_tarjeta" placeholder="Numero de tarjeta">
+      </div>
+      <div class="form-group my-3">
         <label for="agregar_dinero">Nuevo saldo</label>
-        <input type="number" class="form-control" id="agregar_dinero" name="agregar_dinero" placeholder="Coloque el nuevo saldo">
+        <input type="number" required class="form-control" id="agregar_dinero" name="agregar_dinero" placeholder="Coloque el nuevo saldo">
       </div>
       <button type="submit" class="btn btn-primary d-block mx-auto">Agregar dinero</button>
     </form>

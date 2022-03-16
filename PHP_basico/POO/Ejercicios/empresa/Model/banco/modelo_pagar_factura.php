@@ -9,6 +9,8 @@ $database = new Conexion();
 $nombre_facturas = isset($_POST['nombre_factura']) ? $_POST['nombre_factura'] : null;
 $numero_facturas = isset($_POST['numero_factura']) ? $_POST['numero_factura'] : null;
 $coste_facturas = isset($_POST['coste_factura']) ? $_POST['coste_factura'] : null;
+$id_tarjeta = isset($_POST['id_tarjeta']) ? $_POST['id_tarjeta'] : null;
+
 
 $sesion_actual = $_SESSION['sesion_actual'];
 
@@ -16,7 +18,7 @@ $controller_banco = new Cuenta();
 
 $controller_banco->insertarFactura($numero_facturas, $nombre_facturas, $coste_facturas, $sesion_actual);
 
-$resultado_factura = $controller_banco->retirarDinero($sesion_actual, $coste_facturas);
+$resultado_factura = $controller_banco->retirarDinero($id_tarjeta, $coste_facturas);
 
 
 session_abort();

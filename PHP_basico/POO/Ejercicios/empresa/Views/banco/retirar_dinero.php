@@ -20,8 +20,12 @@ require_once '../../Model/banco/info_dinero.php';
     </div>
     <form action="../../Model/banco/modelo_retirar_dinero.php" method="POST">
       <div class="form-group my-3">
+        <label for="id_tarjeta">Tarjeta de credito</label>
+        <input type="number" required class="form-control" id="id_tarjeta" name="id_tarjeta" placeholder="Numero de tarjeta">
+      </div>
+      <div class="form-group my-3">
         <label for="retirar_dinero">Retirar saldo</label>
-        <input type="number" class="form-control" id="retirar_dinero" name="retirar_dinero" placeholder="Coloque el saldo a retirar">
+        <input type="number" required class="form-control" id="retirar_dinero" name="retirar_dinero" placeholder="Coloque el saldo a retirar">
       </div>
       <button type="submit" class="btn btn-primary d-block mx-auto">Retirar dinero</button>
     </form>
